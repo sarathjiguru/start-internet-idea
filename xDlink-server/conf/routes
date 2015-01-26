@@ -1,0 +1,11 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /send-a-link                        controllers.Application.index()
+# receive a link
+POST    /send-a-link                controllers.Application.receiveALink()
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
