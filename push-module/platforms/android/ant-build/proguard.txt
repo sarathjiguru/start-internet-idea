@@ -1,0 +1,9 @@
+# view AndroidManifest.xml #generated:6
+-keep class com.xDlink.CordovaApp { <init>(...); }
+
+# view AndroidManifest.xml #generated:14
+-keep class org.jboss.aerogear.android.unifiedpush.AeroGearGCMMessageReceiver { <init>(...); }
+
+# view AndroidManifest.xml #generated:13
+-keep class org.jboss.aerogear.cordova.push.PushHandlerActivity { <init>(...); }
+
