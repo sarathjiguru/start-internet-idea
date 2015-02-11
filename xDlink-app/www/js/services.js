@@ -94,4 +94,22 @@ angular.module('starter.services', [])
       return friends[friendId];
     }
   }
+})
+
+.factory('DeviceReady', function(){
+  var device_model = 'model was not fetched'; 
+  return{
+    waitForDevice: function(){
+      document.addEventListener("deviceready", this.ready, false);
+      
+    },
+    ready: function(){
+      console.log(device);
+      device_model = device.model;
+    },
+    model: function(){
+      return device_model;
+    }
+
+  }
 });

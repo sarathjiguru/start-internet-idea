@@ -21,8 +21,28 @@ angular.module('starter.controllers', [])
   $scope.friend = Friends.get($stateParams.friendId);
 })
 
-.controller('AccountCtrl', function($scope) {
+.controller('AccountCtrl', function($scope, $http, DeviceReady) {
   $scope.settings = {
     enableFriends: true
   };
+  DeviceReady.waitForDevice();
+  console.log(DeviceReady.model());
+  $scope.model = DeviceReady.model();
+
+  $scope.signUp = function(){
+      $http.post('http://127.0.0.1:9000/signup', {'uname': "ur_name",'model': $scope.model})
+          .success(function(data, status, headers, config){
+              console.log('data'+ data);
+
+              console.log('status' + status);
+              console.log('headers' + headers.response);
+              console.log('config' + config);
+
+          })
+          .error(function (data,status){
+              console.log('in error');
+              console.log('data' + data);
+              console.log('status' + status);
+          });
+  }
 });
