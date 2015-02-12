@@ -1,4 +1,5 @@
 /home/sarath/xDlink/push-module/platforms/android/ant-build/classes.dex : \
+/home/sarath/xDlink/push-module/platforms/android/ant-build/classes/org/apache/cordova/device/Device.class \
 /home/sarath/xDlink/push-module/platforms/android/ant-build/classes/org/jboss/aerogear/cordova/push/PushHandlerActivity.class \
 /home/sarath/xDlink/push-module/platforms/android/ant-build/classes/org/jboss/aerogear/cordova/push/PushPlugin$1.class \
 /home/sarath/xDlink/push-module/platforms/android/ant-build/classes/org/jboss/aerogear/cordova/push/PushPlugin$VoidCallback.class \

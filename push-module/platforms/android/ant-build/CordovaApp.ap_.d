@@ -40,8 +40,11 @@
 /home/sarath/xDlink/push-module/platforms/android/assets/www/img/logo.png \
 /home/sarath/xDlink/push-module/platforms/android/assets/www/css/index.css \
 /home/sarath/xDlink/push-module/platforms/android/assets/www/js/index.js \
+/home/sarath/xDlink/push-module/platforms/android/assets/www/plugins/org.apache.cordova.device \
 /home/sarath/xDlink/push-module/platforms/android/assets/www/plugins/com.vladstirbu.cordova.promise \
 /home/sarath/xDlink/push-module/platforms/android/assets/www/plugins/org.jboss.aerogear.cordova.push \
+/home/sarath/xDlink/push-module/platforms/android/assets/www/plugins/org.apache.cordova.device/www \
+/home/sarath/xDlink/push-module/platforms/android/assets/www/plugins/org.apache.cordova.device/www/device.js \
 /home/sarath/xDlink/push-module/platforms/android/assets/www/plugins/com.vladstirbu.cordova.promise/www \
 /home/sarath/xDlink/push-module/platforms/android/assets/www/plugins/com.vladstirbu.cordova.promise/www/promise.js \
 /home/sarath/xDlink/push-module/platforms/android/assets/www/plugins/org.jboss.aerogear.cordova.push/www \

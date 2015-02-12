@@ -4,6 +4,9 @@
     <feature name="PushPlugin">
         <param name="android-package" value="org.jboss.aerogear.cordova.push.PushPlugin" />
     </feature>
+    <feature name="Device">
+        <param name="android-package" value="org.apache.cordova.device.Device" />
+    </feature>
     <name>xDpusher</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.

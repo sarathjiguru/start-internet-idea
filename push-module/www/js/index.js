@@ -33,6 +33,7 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
+        console.log(device)
         console.log('before received event')
         console.log('printing push'+push)
         app.receivedEvent('deviceready');
@@ -56,6 +57,7 @@ var app = {
         }
     },
     onNotification: function(event) {
+        console.log(device)
         console.log('in notification '+event)
         alert(event.alert);
     },

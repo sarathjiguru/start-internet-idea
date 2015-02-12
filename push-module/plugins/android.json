@@ -55,6 +55,10 @@
                         {
                             "xml": "<feature name=\"PushPlugin\"><param name=\"android-package\" value=\"org.jboss.aerogear.cordova.push.PushPlugin\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -63,6 +67,9 @@
     },
     "installed_plugins": {
         "org.jboss.aerogear.cordova.push": {
+            "PACKAGE_NAME": "com.xDlink"
+        },
+        "org.apache.cordova.device": {
             "PACKAGE_NAME": "com.xDlink"
         }
     },

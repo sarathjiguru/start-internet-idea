@@ -15,6 +15,13 @@ module.exports = [
         ]
     },
     {
+        "file": "plugins/org.apache.cordova.device/www/device.js",
+        "id": "org.apache.cordova.device.device",
+        "clobbers": [
+            "device"
+        ]
+    },
+    {
         "file": "plugins/com.vladstirbu.cordova.promise/www/promise.js",
         "id": "com.vladstirbu.cordova.promise.Promise",
         "clobbers": [
@@ -26,6 +33,7 @@ module.exports.metadata =
 // TOP OF METADATA
 {
     "org.jboss.aerogear.cordova.push": "1.0.2",
+    "org.apache.cordova.device": "0.2.13",
     "com.vladstirbu.cordova.promise": "1.0.0",
     "android.support.v4": "1.0.0",
     "com.google.playservices": "19.0.0"
