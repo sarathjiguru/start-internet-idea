@@ -1,3 +1,7 @@
-xDlink-server/project/
-xDlink-server/target/
-
+logs
+project/project
+project/target
+#target #commented for deploying to openshift
+tmp
+.history
+dist
