@@ -1,5 +1,6 @@
 package controllers;
 
+import models.UserAccess;
 import play.data.DynamicForm;
 import play.mvc.Controller;
 import play.mvc.Result;
@@ -19,7 +20,7 @@ public class Application extends Controller {
     static Result okResult = ok("received the data");
     static Result badRequestResult = badRequest("too much big link[More than 10 KB]. Looks something fishy!. Try hashing it. Right now we dont have hashing app. But we will plan it very soon!. Apologies");
     public static Result index() {
-        return render("Your new application is ready.");
+        return render(UserAccess.options().get("1"));
     }
 
     private static Status render(String msg) {

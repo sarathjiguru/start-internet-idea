@@ -24,3 +24,23 @@ Connection URL: mysql://$OPENSHIFT_MYSQL_DB_HOST:$OPENSHIFT_MYSQL_DB_PORT/
 
 You can manage your new MySQL database by also embedding phpmyadmin.
 The phpmyadmin username and password will be the same as the MySQL credentials above.
+
+##Best Practices###
+http://phabricator.org/
+http://www.html5rocks.com/en/tutorials/speed/quick/
+http://stackoverflow.com/questions/3137080/table-design-for-users-information-aswell-as-login-credentials --2nd answer
+http://programmers.stackexchange.com/questions/170463/why-to-use-web-services-instead-of-direct-access-to-a-relational-database-for-an
+keep in mind to use thrift server
+##Database
+user info --> use mysql
+user activity --> use mongodb
+user cache --> use redis
+
+###Founder questions
+http://yourstory.com/2015/02/startup-question-bank/
+
+###StackShare
+http://stackshare.io/linkedin
+http://stackshare.io/facebook
+http://stackshare.io/twitter
+http://stackshare.io/uber
