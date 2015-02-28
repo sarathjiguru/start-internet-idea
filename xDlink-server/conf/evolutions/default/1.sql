@@ -7,10 +7,10 @@
 create table USER_ACCESS (
   id                        bigint not null,
   name                      varchar(255),
-  constraint pk_company primary key (id)
+  constraint pk_ua PRIMARY KEY (id)
   );
 
-create sequence USER_ACCESS_seq start with 1000;
+
 
 # --- !Downs
 
@@ -21,5 +21,5 @@ drop table if exists USER_ACCESS;
 
 SET REFERENTIAL_INTEGRITY TRUE;
 
-drop sequence if exists USER_ACCESS_seq;
+
 
