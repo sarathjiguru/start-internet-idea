@@ -2,9 +2,9 @@
 
 # --- !Ups
 
-insert into USER_ACCESS (id,name) values (1,'sarath.j9');
+insert into user_access (id,name) values (1,'sarath.j9');
 
 
 # --- !Downs
 
-delete from USER_ACCESS;
+delete from user_access;

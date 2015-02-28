@@ -35,7 +35,9 @@ keep in mind to use thrift server
 user info --> use mysql
 user activity --> use mongodb
 user cache --> use redis
-
+http://stackoverflow.com/questions/17951483/datasource-named-different-than-default-causes-npe-in-datasourcepool
+http://ics-software-engineering.github.io/play-example-mysql/
+http://www.avaje.org/ebean/getstarted_props.html
 ###PHP admin
 Please make note of these MySQL credentials again:
   Root User: admin5Q1YqKF

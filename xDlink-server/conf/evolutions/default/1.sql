@@ -4,7 +4,7 @@
 # --- !Ups
 
 
-create table USER_ACCESS (
+create table user_access (
   id                        bigint not null,
   name                      varchar(255),
   constraint pk_ua PRIMARY KEY (id)
@@ -16,7 +16,7 @@ create table USER_ACCESS (
 
 SET REFERENTIAL_INTEGRITY FALSE;
 
-drop table if exists USER_ACCESS;
+drop table if exists user_access;
 
 
 SET REFERENTIAL_INTEGRITY TRUE;
