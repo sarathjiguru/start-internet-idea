@@ -30,7 +30,7 @@ angular.module('starter.controllers', [])
   $scope.model = DeviceReady.model();
 
   $scope.signUp = function(){
-      $http.post('http://127.0.0.1:9000/signup', {'uname': "ur_name",'model': $scope.model})
+      $http.post('http://play2demo-openbigdata.rhcloud.com/signup', {'uname': "ur_name",'model': $scope.model})
           .success(function(data, status, headers, config){
               console.log('data'+ data);
 

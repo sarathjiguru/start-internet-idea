@@ -14,8 +14,8 @@ GET     /send-a-link    controllers.Application.showLinkPage()
 POST    /send-a-link    controllers.Application.receiveALink()
 
 #SignUp
-#GET     /signup         controllers.Application.showRegister()
-POST    /signup         controllers.Application.register()
+GET     /signup-form         controllers.Registration.showRegister()
+POST    /signup         controllers.Registration.register()
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file   controllers.Assets.at(path="/public", file)

@@ -36,11 +36,22 @@ user info --> use mysql
 user activity --> use mongodb
 user cache --> use redis
 
+###PHP admin
+Please make note of these MySQL credentials again:
+  Root User: admin5Q1YqKF
+  Root Password: jL39Vlhzl7Ck
+URL: https://play2demo-openbigdata.rhcloud.com/phpmyadmin/
+
 ###Founder questions
 http://yourstory.com/2015/02/startup-question-bank/
+http://yourstory.com/2008/10/self-assessment-for-entrepreneurs-2/
 
 ###StackShare
 http://stackshare.io/linkedin
 http://stackshare.io/facebook
 http://stackshare.io/twitter
 http://stackshare.io/uber
+
+
+ ###A record
+ Host - @ points to - 50.63.202.48 
