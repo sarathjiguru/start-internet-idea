@@ -5,8 +5,9 @@
 
 
 create table user_access (
-  id                        bigint not null,
-  name                      varchar(255),
+  id    varchar(255) not null,
+  device_model  varchar(255),
+  registration_id   TEXT,
   constraint pk_ua PRIMARY KEY (id)
   );
 

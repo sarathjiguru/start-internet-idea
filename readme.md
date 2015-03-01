@@ -55,5 +55,9 @@ http://stackshare.io/twitter
 http://stackshare.io/uber
 
 
- ###A record
+###A record
  Host - @ points to - 50.63.202.48 
+
+###registration id XT1068
+Android
+{event: "registered", regid: "APA91bH-eocy617AOpzuE8RwjLN8uTNGHvRSMuyLJ6z6K1T1ay…1NVk6biMGzqTPYtf-lSLhCRoUb_9SRMAQI66epZRMpysLbfPI"}

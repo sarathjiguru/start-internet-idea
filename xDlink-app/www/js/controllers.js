@@ -28,20 +28,15 @@ angular.module('starter.controllers', [])
   DeviceReady.waitForDevice();
   console.log(DeviceReady.model());
   $scope.model = DeviceReady.model();
-
+  console.log("push id: " + DeviceReady.registrationId());
   $scope.signUp = function(){
-      $http.post('http://play2demo-openbigdata.rhcloud.com/signup', {'uname': "ur_name",'model': $scope.model})
+      //get registration id for the first time
+      $http.post('http://x-d.link/signup', {'uname': "ur_name",'model': $scope.model})
           .success(function(data, status, headers, config){
-              console.log('data'+ data);
-
               console.log('status' + status);
-              console.log('headers' + headers.response);
-              console.log('config' + config);
-
           })
           .error(function (data,status){
               console.log('in error');
-              console.log('data' + data);
               console.log('status' + status);
           });
   }

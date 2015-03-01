@@ -11,16 +11,16 @@ import java.util.Map;
 @Entity
 public class UserAccess extends Model{
     @Id
-    public Long id;
+    public String id;
 
     @Constraints.Required
-    public String name;
+    public String device_model;
 
-    public static Model.Finder<Long, UserAccess> find = new Model.Finder<>(Long.class, UserAccess.class);
+    public static Model.Finder<String, UserAccess> find = new Model.Finder<>(String.class, UserAccess.class);
     public static Map<String,String> options(){
         LinkedHashMap<String,String> options = new LinkedHashMap<>();
-        for(UserAccess c: UserAccess.find.orderBy("name").findList()) {
-            options.put(c.id.toString(), c.name);
+        for(UserAccess c: UserAccess.find.orderBy("device_model").findList()) {
+            options.put(c.id, c.device_model);
         }
         return options;
     }

@@ -10,7 +10,7 @@ import static play.data.Form.form;
 public class Registration extends Controller{
 
     public static Result showRegister(){
-        return ok(signup.render("register with your name"));
+        return ok(signup.render("register with your device name"));
     }
 
     public static Result register(){

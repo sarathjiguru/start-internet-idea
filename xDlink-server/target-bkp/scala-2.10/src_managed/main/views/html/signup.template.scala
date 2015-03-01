@@ -30,9 +30,9 @@ Seq[Any](format.raw/*1.19*/("""
 
 """),_display_(Seq[Any](/*3.2*/main("Welcome to Play")/*3.25*/ {_display_(Seq[Any](format.raw/*3.27*/("""
 <form method="post" action=""""),_display_(Seq[Any](/*4.30*/routes/*4.36*/.Application.register())),format.raw/*4.59*/("""">
-    <input type="text" name="First Name" /><br/>
-    <input type="text" name="Last Name" /><br/>
-    <input type="text" name="comments" /><br/>
+    <input type="text" device_model="First Name" /><br/>
+    <input type="text" device_model="Last Name" /><br/>
+    <input type="text" device_model="comments" /><br/>
     <h2>model-at-app</h2>
     <input type="submit" value="send" />
 </form>
