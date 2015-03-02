@@ -97,55 +97,63 @@ angular.module('starter.services', [])
 })
 
 .factory('DeviceReady', function() {
-  var device_model = 'model was not fetched';
-  var push_id= "<dummy registration id to be fetched from gcm>";
-  var pushSuccessHandler = function(result) {
-      console.log(result);
-  };  
-  var pushErrorHandler = function(error) {
-      console.log("error: "+error);
-  };
-  window.onNotificationGCM = function(e){
-      switch(e.event)
-      {
-        case 'registered' :{
-          console.log("from services.js: "+e.regid)
-          push_id=e.regid;
-        break;
-        }
-      }
+    var device_model = 'model was not fetched';
+    var push_id = "<dummy registration id to be fetched from gcm>";
+    var pushSuccessHandler = function(result) {
+        console.log(result);
     };
-  registerDevice = function() {
-    try {
-      var pushNotification = window.plugins.pushNotification;
-      if (window.device.platform == 'android' || device.platform == 'Android') {
-        pushNotification.register(
-        pushSuccessHandler,
-        pushErrorHandler, {
-          "senderID": "633490653769",
-          "ecb": "onNotificationGCM"
+    var pushErrorHandler = function(error) {
+        console.log("error: " + error);
+    };
+    registerDevice = function() {
+        try {
+            var pushNotification = window.plugins.pushNotification;
+            if (window.device.platform == 'android' || device.platform == 'Android') {
+                pushNotification.register(
+                    pushSuccessHandler,
+                    pushErrorHandler, {
+                        "senderID": "633490653769",
+                        "ecb": "onNotificationGCM"
+                    }
+                );
+            }
+        } catch (err) {
+            console.log("error: " + err);
         }
-        );
-      }
-    } catch (err) {
-        console.log("error: "+err);
-      }
     };
 
-  return {
-    waitForDevice: function() {
-    document.addEventListener("deviceready", this.ready, false);
-    },
-    ready: function() {
-      console.log(device);
-      device_model = device.model;
-      registerDevice();
-    },
-    model: function() {
-      return device_model;
-    }, 
-    registrationId: function(){
-      return (push_id);
+    return {
+        waitForDevice: function() {
+            document.addEventListener("deviceready", this.ready, false);
+        },
+        ready: function() {
+            console.log(device);
+            device_model = device.model;
+            registerDevice();
+        },
+        model: function() {
+            return device_model;
+        },
+        registerID: function(id) {
+            //Insert code here to store the user's ID on your notification server. 
+            //You'll probably have a web service (wrapped in an Angular service of course) set up for this.  
+            //For example:
+            console.log("from registerId: "+ id);
+        },
     }
-  }
 });
+
+window.onNotificationGCM = function(e) {
+    switch (e.event) {
+        case 'registered':
+            {
+                console.log("from services.js: " + e.regid)
+                push_id = e.regid;
+                var elem = angular.element(document.querySelector('[ng-app]'));
+                var injector = elem.injector();
+                var myService = injector.get('DeviceReady');
+                myService.registerID(e.regid);
+                break;
+            }
+    }
+};

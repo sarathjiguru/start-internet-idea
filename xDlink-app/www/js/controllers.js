@@ -28,7 +28,6 @@ angular.module('starter.controllers', [])
   DeviceReady.waitForDevice();
   console.log(DeviceReady.model());
   $scope.model = DeviceReady.model();
-  console.log("push id: " + DeviceReady.registrationId());
   $scope.signUp = function(){
       //get registration id for the first time
       $http.post('http://x-d.link/signup', {'uname': "ur_name",'model': $scope.model})
