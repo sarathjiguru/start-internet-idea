@@ -2,7 +2,7 @@
 
 # --- !Ups
 
-insert into user_access (id,device_model,registration_id) values (1,'xdapp.test.first.insert', "<not a real registration id>");
+insert into user_access (id,device_model) values (1,'xdapp.test.first.insert');
 
 
 # --- !Downs

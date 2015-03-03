@@ -17,9 +17,17 @@ public class UserAccess extends Model{
     public String device_model;
 
     public static Model.Finder<String, UserAccess> find = new Model.Finder<>(String.class, UserAccess.class);
+
+    //Constructor used only for testing
+    public UserAccess(String a, String b) {
+        id = a;
+        device_model = b;
+    }
+
     public static Map<String,String> options(){
         LinkedHashMap<String,String> options = new LinkedHashMap<>();
         for(UserAccess c: UserAccess.find.orderBy("device_model").findList()) {
+            System.out.println(c.id+","+c.device_model);
             options.put(c.id, c.device_model);
         }
         return options;

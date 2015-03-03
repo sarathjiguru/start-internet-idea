@@ -8,6 +8,9 @@ libraryDependencies ++= Seq(
   cache,
   "ws.securesocial" %% "securesocial" % "2.1.4",
   "mysql" % "mysql-connector-java" % "5.1.18"
-)     
+)
+
+
+libraryDependencies += "org.dbunit" % "dbunit" % "2.5.0"
 
 play.Project.playJavaSettings

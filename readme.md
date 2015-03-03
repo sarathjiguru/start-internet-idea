@@ -38,6 +38,8 @@ user cache --> use redis
 http://stackoverflow.com/questions/17951483/datasource-named-different-than-default-causes-npe-in-datasourcepool
 http://ics-software-engineering.github.io/play-example-mysql/
 http://www.avaje.org/ebean/getstarted_props.html
+http://blog.matthieuguillermin.fr/2012/03/unit-testing-tricks-for-play-2-0-and-ebean/
+http://www.copyquery.com/how-should-you-test-play-framework-models-when-using-ebeans/	
 ###PHP admin
 Please make note of these MySQL credentials again:
   Root User: admin5Q1YqKF
