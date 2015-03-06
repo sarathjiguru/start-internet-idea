@@ -4,7 +4,7 @@
 # --- !Ups
 
 
-create table user_access (
+create table user_account (
   id    varchar(255) not null,
   device_model  varchar(255),
   constraint pk_ua PRIMARY KEY (id)
@@ -22,7 +22,7 @@ create table google_id (
 
 SET REFERENTIAL_INTEGRITY FALSE;
 
-drop table if exists user_access;
+drop table if exists user_account;
 
 
 SET REFERENTIAL_INTEGRITY TRUE;

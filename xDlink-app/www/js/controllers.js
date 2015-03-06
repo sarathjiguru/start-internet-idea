@@ -30,7 +30,7 @@ angular.module('starter.controllers', [])
   $scope.model = DeviceReady.model();
   $scope.signUp = function(){
       //get registration id for the first time
-      $http.post('http://x-d.link/signup', {'uname': "ur_name",'model': $scope.model})
+      $http.post('http://xdlinkserver-openbigdata.rhcloud.com/signup', {'uname': "ur_name",'model': $scope.model})
           .success(function(data, status, headers, config){
               console.log('status' + status);
           })

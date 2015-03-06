@@ -14,8 +14,16 @@ GET     /send-a-link    controllers.Application.showLinkPage()
 POST    /send-a-link    controllers.Application.receiveALink()
 
 #SignUp
-GET     /signup-form         controllers.Registration.showRegister()
-POST    /signup         controllers.Registration.register()
+GET     /signup-form    controllers.Registration.showRegister()
+POST    /signup         controllers.Registration.registerDevice()
+
+#GoogleRegistrationid
+GET     /googleid/:id   controllers.Registration.googleRegId(id: String)
+
+
+#temporary access the in memory database populated
+GET     /useraccount/:id    controllers.RetrieveData.userAccountFor(id: String)
+GET     /googleidforuser/:id    controllers.RetrieveData.googleIdFor(id: String)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file   controllers.Assets.at(path="/public", file)

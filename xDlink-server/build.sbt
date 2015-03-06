@@ -1,4 +1,4 @@
-name := "xDlink-server"
+name := "xdlinkserver"
 
 version := "2.0-SNAPSHOT"
 

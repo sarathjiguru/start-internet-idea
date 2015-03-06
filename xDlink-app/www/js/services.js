@@ -96,11 +96,11 @@ angular.module('starter.services', [])
     }
 })
 
-.factory('DeviceReady', function() {
+.factory('DeviceReady', function($http) {
     var device_model = 'model was not fetched';
     var push_id = "<dummy registration id to be fetched from gcm>";
     var pushSuccessHandler = function(result) {
-        console.log(result);
+        console.log("push success: "+result);
     };
     var pushErrorHandler = function(error) {
         console.log("error: " + error);
@@ -128,8 +128,9 @@ angular.module('starter.services', [])
         },
         ready: function() {
             console.log(device);
-            device_model = device.model;
             registerDevice();
+
+            device_model = device.model;
         },
         model: function() {
             return device_model;
@@ -139,11 +140,20 @@ angular.module('starter.services', [])
             //You'll probably have a web service (wrapped in an Angular service of course) set up for this.  
             //For example:
             console.log("from registerId: "+ id);
+            $http.get('http://xdlinkserver-openbigdata.rhcloud.com/googleid/id='+id)
+                .success(function(data, status, headers, config) {
+                    console.log(data)
+            })
+                .error(function(data, status, headers, config) {
+                    console.log(data)
+            });
+
         },
     }
 });
 
 window.onNotificationGCM = function(e) {
+    console.log("from onNotificationGCM: "+e);
     switch (e.event) {
         case 'registered':
             {

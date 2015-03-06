@@ -1,5 +1,6 @@
 package controllers;
 
+import models.UserAccount;
 import play.data.DynamicForm;
 import play.mvc.Controller;
 import play.mvc.Result;
@@ -9,12 +10,13 @@ import static play.data.Form.form;
 
 public class Registration extends Controller{
 
+    static UserAccount userAccount = new UserAccount();
+    private static Result okResult = ok("Your device is registered successfully");
+
     public static Result showRegister(){
         return ok(signup.render("register with your device name"));
     }
-
-    public static Result register(){
-        System.out.println("in register");
+    private static void setResponseHeaders() {
         // Need to add the correct domain in here!!
         response().setHeader("Access-Control-Allow-Origin", "*");
         // Only allow POST
@@ -22,18 +24,28 @@ public class Registration extends Controller{
         // Cache response for 5 minutes
         response().setHeader("Access-Control-Max-Age", "300");
         response().setHeader("Access-Control-Allow-Headers", "Content-Type, Accept");         // Ensure this header is also allowed!
+    }
 
-
+    public static Result registerDevice(){
+        setResponseHeaders();
         Result aResult;
-        System.out.println(request().body());
         DynamicForm registerReq = form().bindFromRequest();
         String userName = registerReq.get("uname");
         String model = registerReq.get("model");
-        aResult = Application.okResult;
+
+        userAccount.newSignUp(userName,model);
+
+        aResult = Registration.okResult;
         System.out.println("userName: " +userName );
         System.out.println("model: " + model);
 
         return aResult;
+    }
+
+    public static Result googleRegId(String id){
+        setResponseHeaders();
+        System.out.println("google registration id: "+id);
+        return Registration.okResult;
     }
 
 }

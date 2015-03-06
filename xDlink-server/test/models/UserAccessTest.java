@@ -16,8 +16,8 @@ public class UserAccessTest {
 
     @Test
     public void createAndRetrieveUser() {
-        new UserAccess("jiguru.parents", "motoe").save();
-        UserAccess myFirstDevice = UserAccess.find.where().eq("id", "jiguru.parents").findUnique();
+        new UserAccount("jiguru.parents", "motoe").save();
+        UserAccount myFirstDevice = UserAccount.find.where().eq("id", "jiguru.parents").findUnique();
         assertNotNull(myFirstDevice);
         assertEquals("motoe", myFirstDevice.device_model);
     }

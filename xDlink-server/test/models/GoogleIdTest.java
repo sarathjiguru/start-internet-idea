@@ -17,7 +17,7 @@ public class GoogleIdTest {
     public void shouldInsertIntoTable() {
         GoogleId googleId = new GoogleId();
         String userId = "jiguru.parents";
-        googleId.insertRegisterId(userId,"A dummy registration id");
+        googleId.firstTimeGoogleRegistration(userId, "A dummy registration id");
         GoogleId insertedRecord = GoogleId.find.where().eq("id",userId).findUnique();
         assertNotNull(insertedRecord);
     }
