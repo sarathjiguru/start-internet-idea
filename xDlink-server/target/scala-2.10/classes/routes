@@ -18,7 +18,7 @@ GET     /signup-form    controllers.Registration.showRegister()
 POST    /signup         controllers.Registration.registerDevice()
 
 #GoogleRegistrationid
-GET     /googleid/:id   controllers.Registration.googleRegId(id: String)
+GET     /googleid   controllers.Registration.googleRegId(id: String, registration_id: String)
 
 
 #temporary access the in memory database populated

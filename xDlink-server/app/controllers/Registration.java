@@ -1,5 +1,6 @@
 package controllers;
 
+import models.GoogleId;
 import models.UserAccount;
 import play.data.DynamicForm;
 import play.mvc.Controller;
@@ -12,6 +13,7 @@ public class Registration extends Controller{
 
     static UserAccount userAccount = new UserAccount();
     private static Result okResult = ok("Your device is registered successfully");
+    private static GoogleId googleId = new GoogleId();
 
     public static Result showRegister(){
         return ok(signup.render("register with your device name"));
@@ -30,8 +32,8 @@ public class Registration extends Controller{
         setResponseHeaders();
         Result aResult;
         DynamicForm registerReq = form().bindFromRequest();
-        String userName = registerReq.get("uname");
-        String model = registerReq.get("model");
+        String userName = registerReq.get("id");
+        String model = registerReq.get("device_model");
 
         userAccount.newSignUp(userName,model);
 
@@ -42,8 +44,9 @@ public class Registration extends Controller{
         return aResult;
     }
 
-    public static Result googleRegId(String id){
+    public static Result googleRegId(String id, String registration_id){
         setResponseHeaders();
+        googleId.firstTimeGoogleRegistration(id,registration_id);
         System.out.println("google registration id: "+id);
         return Registration.okResult;
     }

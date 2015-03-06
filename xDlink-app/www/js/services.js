@@ -127,37 +127,36 @@ angular.module('starter.services', [])
             document.addEventListener("deviceready", this.ready, false);
         },
         ready: function() {
-            console.log(device);
             registerDevice();
-
             device_model = device.model;
         },
         model: function() {
             return device_model;
         },
+        getID: function(){
+            return push_id;
+        },
         registerID: function(id) {
+            push_id = id;
             //Insert code here to store the user's ID on your notification server. 
             //You'll probably have a web service (wrapped in an Angular service of course) set up for this.  
             //For example:
             console.log("from registerId: "+ id);
-            $http.get('http://xdlinkserver-openbigdata.rhcloud.com/googleid/id='+id)
+            $http.get('http://x-d.link/googleid?id='+"user_name"+"&registration_id="+id)
                 .success(function(data, status, headers, config) {
                     console.log(data)
             })
                 .error(function(data, status, headers, config) {
                     console.log(data)
             });
-
         },
     }
 });
 
 window.onNotificationGCM = function(e) {
-    console.log("from onNotificationGCM: "+e);
     switch (e.event) {
         case 'registered':
             {
-                console.log("from services.js: " + e.regid)
                 push_id = e.regid;
                 var elem = angular.element(document.querySelector('[ng-app]'));
                 var injector = elem.injector();

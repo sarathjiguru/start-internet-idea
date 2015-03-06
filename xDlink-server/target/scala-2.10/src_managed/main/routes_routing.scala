@@ -1,6 +1,6 @@
 // @SOURCE:/home/sarath/xDlink/xDlink-server/conf/routes
-// @HASH:a75a53ed2eb749a12b836bafa6a3a34c2b07434a
-// @DATE:Fri Mar 06 22:22:32 IST 2015
+// @HASH:47dce3f99028f973405f4fef9992b79b9da33b45
+// @DATE:Sat Mar 07 01:08:47 IST 2015
 
 
 import play.core._
@@ -53,7 +53,7 @@ private[this] lazy val controllers_Registration_registerDevice5 = Route("POST", 
         
 
 // @LINE:21
-private[this] lazy val controllers_Registration_googleRegId6 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("googleid/"),DynamicPart("id", """[^/]+""",true))))
+private[this] lazy val controllers_Registration_googleRegId6 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("googleid"))))
         
 
 // @LINE:25
@@ -67,7 +67,7 @@ private[this] lazy val controllers_RetrieveData_googleIdFor8 = Route("GET", Path
 // @LINE:29
 private[this] lazy val controllers_Assets_at9 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("assets/"),DynamicPart("file", """.+""",false))))
         
-def documentation = List(("""OPTIONS""", prefix + (if(prefix.endsWith("/")) "" else "/") + """$all<.+>""","""controllers.Application.preFlight(all:String)"""),("""GET""", prefix,"""controllers.Application.index()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """send-a-link""","""controllers.Application.showLinkPage()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """send-a-link""","""controllers.Application.receiveALink()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """signup-form""","""controllers.Registration.showRegister()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """signup""","""controllers.Registration.registerDevice()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """googleid/$id<[^/]+>""","""controllers.Registration.googleRegId(id:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """useraccount/$id<[^/]+>""","""controllers.RetrieveData.userAccountFor(id:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """googleidforuser/$id<[^/]+>""","""controllers.RetrieveData.googleIdFor(id:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""","""controllers.Assets.at(path:String = "/public", file:String)""")).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
+def documentation = List(("""OPTIONS""", prefix + (if(prefix.endsWith("/")) "" else "/") + """$all<.+>""","""controllers.Application.preFlight(all:String)"""),("""GET""", prefix,"""controllers.Application.index()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """send-a-link""","""controllers.Application.showLinkPage()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """send-a-link""","""controllers.Application.receiveALink()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """signup-form""","""controllers.Registration.showRegister()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """signup""","""controllers.Registration.registerDevice()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """googleid""","""controllers.Registration.googleRegId(id:String, registration_id:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """useraccount/$id<[^/]+>""","""controllers.RetrieveData.userAccountFor(id:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """googleidforuser/$id<[^/]+>""","""controllers.RetrieveData.googleIdFor(id:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""","""controllers.Assets.at(path:String = "/public", file:String)""")).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
   case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
   case l => s ++ l.asInstanceOf[List[(String,String,String)]] 
 }}
@@ -125,8 +125,8 @@ case controllers_Registration_registerDevice5(params) => {
 
 // @LINE:21
 case controllers_Registration_googleRegId6(params) => {
-   call(params.fromPath[String]("id", None)) { (id) =>
-        invokeHandler(controllers.Registration.googleRegId(id), HandlerDef(this, "controllers.Registration", "googleRegId", Seq(classOf[String]),"GET", """GoogleRegistrationid""", Routes.prefix + """googleid/$id<[^/]+>"""))
+   call(params.fromQuery[String]("id", None), params.fromQuery[String]("registration_id", None)) { (id, registration_id) =>
+        invokeHandler(controllers.Registration.googleRegId(id, registration_id), HandlerDef(this, "controllers.Registration", "googleRegId", Seq(classOf[String], classOf[String]),"GET", """GoogleRegistrationid""", Routes.prefix + """googleid"""))
    }
 }
         

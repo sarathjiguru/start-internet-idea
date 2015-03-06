@@ -3,18 +3,12 @@
   <div id="deviceready">
     <div class="list">
   <label class="item item-input">
-    <input type="text" placeholder="First Name">
+    <input type="text" ng-model="user_name" placeholder="First Name">
   </label>
-  <label class="item item-input">
-    <input type="text" placeholder="Last Name">
-  </label>
-  <label class="item item-input">
-    <textarea placeholder="Comments"></textarea>
-  </label>
-  <h3>{{model}}</h3>
+  <h3>Device Model: {{model}}</h3>
 </div>
 </div>
-<center><button class="button button-positive" ng-click="signUp();">
+<center><button class="button button-positive" ng-click="signUp(user_name);">
   awesome
 </button></center>
   </ion-content>

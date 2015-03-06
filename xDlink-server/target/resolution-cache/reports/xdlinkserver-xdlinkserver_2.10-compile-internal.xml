@@ -7,7 +7,7 @@
 		revision="2.0-SNAPSHOT"
 		conf="compile-internal"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20150306211213"/>
+		date="20150307010847"/>
 	<dependencies>
 		<module organisation="org.dbunit" name="dbunit">
 			<revision name="2.5.0" status="release" pubdate="20150302222406" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://dbunit.sourceforge.net" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="72">

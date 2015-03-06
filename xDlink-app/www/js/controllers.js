@@ -21,16 +21,18 @@ angular.module('starter.controllers', [])
   $scope.friend = Friends.get($stateParams.friendId);
 })
 
-.controller('AccountCtrl', function($scope, $http, DeviceReady) {
+.controller('AccountCtrl', function($scope,$http, DeviceReady) {
   $scope.settings = {
     enableFriends: true
   };
   DeviceReady.waitForDevice();
+  
   console.log(DeviceReady.model());
   $scope.model = DeviceReady.model();
-  $scope.signUp = function(){
+
+  $scope.signUp = function(user_name){
       //get registration id for the first time
-      $http.post('http://xdlinkserver-openbigdata.rhcloud.com/signup', {'uname': "ur_name",'model': $scope.model})
+      $http.post('http://x-d.link/signup', {'id': "user_name",'device_model': $scope.model})
           .success(function(data, status, headers, config){
               console.log('status' + status);
           })
@@ -39,4 +41,9 @@ angular.module('starter.controllers', [])
               console.log('status' + status);
           });
   }
+
+  //As of now waiting to get google id from its servers on function onNotificationGCM in services method. Should come up with promise approach
+  setTimeout(function(){
+    console.log("from controllers: "+DeviceReady.getID());
+  },5000);
 });

@@ -2,7 +2,7 @@
 
 # --- !Ups
 
-insert into user_account (id,device_model) values (1,'xdapp.test.first.insert');
+insert into user_account (id,device_model) values ('xdapp.test.first.insert','XT1068');
 
 
 # --- !Downs

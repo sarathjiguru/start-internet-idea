@@ -1,6 +1,6 @@
 // @SOURCE:/home/sarath/xDlink/xDlink-server/conf/routes
-// @HASH:a75a53ed2eb749a12b836bafa6a3a34c2b07434a
-// @DATE:Fri Mar 06 22:22:32 IST 2015
+// @HASH:47dce3f99028f973405f4fef9992b79b9da33b45
+// @DATE:Sat Mar 07 01:08:47 IST 2015
 
 import Routes.{prefix => _prefix, defaultPrefix => _defaultPrefix}
 import play.core._
@@ -38,8 +38,8 @@ def registerDevice(): Call = {
                                                 
 
 // @LINE:21
-def googleRegId(id:String): Call = {
-   Call("GET", _prefix + { _defaultPrefix } + "googleid/" + implicitly[PathBindable[String]].unbind("id", dynamicString(id)))
+def googleRegId(id:String, registration_id:String): Call = {
+   Call("GET", _prefix + { _defaultPrefix } + "googleid" + queryString(List(Some(implicitly[QueryStringBindable[String]].unbind("id", id)), Some(implicitly[QueryStringBindable[String]].unbind("registration_id", registration_id)))))
 }
                                                 
 
@@ -155,8 +155,8 @@ def registerDevice : JavascriptReverseRoute = JavascriptReverseRoute(
 def googleRegId : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Registration.googleRegId",
    """
-      function(id) {
-      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "googleid/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("id", encodeURIComponent(id))})
+      function(id,registration_id) {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "googleid" + _qS([(""" + implicitly[QueryStringBindable[String]].javascriptUnbind + """)("id", id), (""" + implicitly[QueryStringBindable[String]].javascriptUnbind + """)("registration_id", registration_id)])})
       }
    """
 )
@@ -307,8 +307,8 @@ def registerDevice(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
                       
 
 // @LINE:21
-def googleRegId(id:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
-   controllers.Registration.googleRegId(id), HandlerDef(this, "controllers.Registration", "googleRegId", Seq(classOf[String]), "GET", """GoogleRegistrationid""", _prefix + """googleid/$id<[^/]+>""")
+def googleRegId(id:String, registration_id:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Registration.googleRegId(id, registration_id), HandlerDef(this, "controllers.Registration", "googleRegId", Seq(classOf[String], classOf[String]), "GET", """GoogleRegistrationid""", _prefix + """googleid""")
 )
                       
 
