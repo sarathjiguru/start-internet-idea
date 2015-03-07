@@ -32,9 +32,19 @@ angular.module('starter.controllers', [])
 
   $scope.signUp = function(user_name){
       //get registration id for the first time
-      $http.post('http://x-d.link/signup', {'id': "user_name",'device_model': $scope.model})
+      $http.post('http://x-d.link/signup', {'id': user_name,'device_model': $scope.model})
           .success(function(data, status, headers, config){
               console.log('status' + status);
+              setTimeout(function(){
+                console.log("from controllers: "+DeviceReady.getID());
+                $http.get('http://x-d.link/googleid?id='+user_name+"&registration_id="+DeviceReady.getID())
+                  .success(function(data, status, headers, config) {
+                    console.log(data)
+                })
+                  .error(function(data, status, headers, config) {
+                    console.log(data)
+            });
+  },5000);
           })
           .error(function (data,status){
               console.log('in error');
@@ -43,7 +53,5 @@ angular.module('starter.controllers', [])
   }
 
   //As of now waiting to get google id from its servers on function onNotificationGCM in services method. Should come up with promise approach
-  setTimeout(function(){
-    console.log("from controllers: "+DeviceReady.getID());
-  },5000);
+
 });

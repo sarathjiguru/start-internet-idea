@@ -96,7 +96,7 @@ angular.module('starter.services', [])
     }
 })
 
-.factory('DeviceReady', function($http) {
+.factory('DeviceReady', function() {
     var device_model = 'model was not fetched';
     var push_id = "<dummy registration id to be fetched from gcm>";
     var pushSuccessHandler = function(result) {
@@ -141,14 +141,8 @@ angular.module('starter.services', [])
             //Insert code here to store the user's ID on your notification server. 
             //You'll probably have a web service (wrapped in an Angular service of course) set up for this.  
             //For example:
-            console.log("from registerId: "+ id);
-            $http.get('http://x-d.link/googleid?id='+"user_name"+"&registration_id="+id)
-                .success(function(data, status, headers, config) {
-                    console.log(data)
-            })
-                .error(function(data, status, headers, config) {
-                    console.log(data)
-            });
+            //console.log("from registerId: "+ id);
+            
         },
     }
 });
