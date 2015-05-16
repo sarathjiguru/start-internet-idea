@@ -1,0 +1,11 @@
+@(message: String)
+
+@main("Welcome to Play") {
+<form method="post" action="@routes.Application.receiveALink()">
+    <input type="text" name="host" /><br/>
+    <input type="text" name="link_at_client" /><br/>
+    <input type="text" name="guest" /><br/>
+    <input type="submit" value="send" />
+</form>
+}
+

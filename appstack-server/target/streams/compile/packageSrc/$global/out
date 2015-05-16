@@ -1,0 +1,29 @@
+[0m[[0minfo[0m] [0mPackaging /home/sarath/xDlink/xDlink-server/target/scala-2.10/xdlinkserver_2.10-2.0-SNAPSHOT-sources.jar ...[0m
+[0m[[0mdebug[0m] [0mInput file mappings:[0m
+[0m[[0mdebug[0m] [0m	evolutions.conf[0m
+[0m[[0mdebug[0m] [0m	  /home/sarath/xDlink/xDlink-server/conf/evolutions.conf[0m
+[0m[[0mdebug[0m] [0m	evolutions/default/2.sql[0m
+[0m[[0mdebug[0m] [0m	  /home/sarath/xDlink/xDlink-server/conf/evolutions/default/2.sql[0m
+[0m[[0mdebug[0m] [0m	evolutions/default/1.sql[0m
+[0m[[0mdebug[0m] [0m	  /home/sarath/xDlink/xDlink-server/conf/evolutions/default/1.sql[0m
+[0m[[0mdebug[0m] [0m	models/UserAccount.java[0m
+[0m[[0mdebug[0m] [0m	  /home/sarath/xDlink/xDlink-server/app/models/UserAccount.java[0m
+[0m[[0mdebug[0m] [0m	evolutions/default[0m
+[0m[[0mdebug[0m] [0m	  /home/sarath/xDlink/xDlink-server/conf/evolutions/default[0m
+[0m[[0mdebug[0m] [0m	controllers/Application.java[0m
+[0m[[0mdebug[0m] [0m	  /home/sarath/xDlink/xDlink-server/app/controllers/Application.java[0m
+[0m[[0mdebug[0m] [0m	application.conf[0m
+[0m[[0mdebug[0m] [0m	  /home/sarath/xDlink/xDlink-server/conf/application.conf[0m
+[0m[[0mdebug[0m] [0m	controllers/Registration.java[0m
+[0m[[0mdebug[0m] [0m	  /home/sarath/xDlink/xDlink-server/app/controllers/Registration.java[0m
+[0m[[0mdebug[0m] [0m	evolutions[0m
+[0m[[0mdebug[0m] [0m	  /home/sarath/xDlink/xDlink-server/conf/evolutions[0m
+[0m[[0mdebug[0m] [0m	controllers/RetrieveData.java[0m
+[0m[[0mdebug[0m] [0m	  /home/sarath/xDlink/xDlink-server/app/controllers/RetrieveData.java[0m
+[0m[[0mdebug[0m] [0m	routes[0m
+[0m[[0mdebug[0m] [0m	  /home/sarath/xDlink/xDlink-server/conf/routes[0m
+[0m[[0mdebug[0m] [0m	openshift.conf[0m
+[0m[[0mdebug[0m] [0m	  /home/sarath/xDlink/xDlink-server/conf/openshift.conf[0m
+[0m[[0mdebug[0m] [0m	models/GoogleId.java[0m
+[0m[[0mdebug[0m] [0m	  /home/sarath/xDlink/xDlink-server/app/models/GoogleId.java[0m
+[0m[[0minfo[0m] [0mDone packaging.[0m
