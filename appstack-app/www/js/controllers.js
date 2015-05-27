@@ -3,8 +3,7 @@ angular.module('starter.controllers', [])
 .controller('DashCtrl', function($scope) {})
 
 .controller('ChatsCtrl', function($scope, item) {
-  $scope.chats=item;
-  console.log("from controller"+ $scope.chats);
+  $scope.chats=JSON.parse(item);
   $scope.remove = function(chat) {
     Chats.remove(chat);
   }
