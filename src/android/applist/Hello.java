@@ -22,14 +22,8 @@ import java.util.List;
 public class Hello extends CordovaPlugin {
     private static final String APP_ID = "appid";
     private static final String APP_NAME = "appname";
-    final String dummy_url = "http://cdn1.iconfinder.com/data/icons/anchor/128/stack.png";
-    /*public static final java.lang.String FETCH_APP_LIST = "greet";
+    final String playstore = "https://play.google.com/store/apps/details?id=";
 
-
-
-        Context applicationContext = this.cordova.getActivity().getApplicationContext();
-        final PackageManager pm = applicationContext.getPackageManager();
-    */
     final String TAG = "HelloPlugin";
 
     @Override
@@ -52,7 +46,7 @@ public class Hello extends CordovaPlugin {
             JSONObject app = new JSONObject();
             app.put("name", appId);
             app.put("lastText", appName);
-            app.put("id", id);
+            app.put("id", playstore+appId);
             app.put("face", path.getPath());
             info.put(app);
             id++;
