@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/xDlink.iml" filepath="$PROJECT_DIR$/.idea/xDlink.iml" />
+      <module fileurl="file://$PROJECT_DIR$/appstack-server.iml" filepath="$PROJECT_DIR$/appstack-server.iml" />
     </modules>
   </component>
 </project>

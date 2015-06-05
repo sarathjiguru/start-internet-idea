@@ -7,6 +7,17 @@ angular.module('starter.controllers', [])
   $scope.remove = function(chat) {
     Chats.remove(chat);
   }
+  console.log('Creating App stack')
+  $http.post('http://x-d.link/installedApps', $scope.chats )
+  	.success(
+  		function(data, status, headers, config){
+  			console.log('installedApps sent to server:'+ status)
+  		}
+  		)
+  	.error(
+  		function(data, status, headers, config){
+  			console.log('error while sending installedApps:'+ data))
+  		}
 })
 
 .controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {

@@ -56,7 +56,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
           controller: 'ChatsCtrl',
           resolve: {
             item: function(Chats) {
-            return Chats.all()
+            return Chats.all();
       }
     }
         }

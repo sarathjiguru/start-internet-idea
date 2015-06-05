@@ -1,0 +1,8 @@
+adb devices
+
+ionic plugin rm android.applist
+ionic plugin add /home/sarath/start-internet-idea/app-list
+/home/sarath/Android/Sdk/platform-tools/adb logcat -c
+ionic run android
+
+/home/sarath/Android/Sdk/platform-tools/adb logcat -s "HelloPlugin"
