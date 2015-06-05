@@ -2,7 +2,7 @@ name := "apptackserver"
 
 version := "1.0"
 
-lazy val `apptackserver` = (project in file(".")).enablePlugins(PlayJava)
+lazy val `AppStackServer` = (project in file(".")).enablePlugins(PlayJava)
 
 scalaVersion := "2.11.1"
 
