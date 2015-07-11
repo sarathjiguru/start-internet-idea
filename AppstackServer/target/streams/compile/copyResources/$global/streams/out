@@ -1,4 +1,0 @@
-[0m[[0mdebug[0m] [0mCopy resource mappings: [0m
-[0m[[0mdebug[0m] [0m	(/home/sarath/start-internet-idea/appstack/AppstackServer/conf/routes,/home/sarath/start-internet-idea/appstack/AppstackServer/target/scala-2.11/classes/routes)[0m
-[0m[[0mdebug[0m] [0m	(/home/sarath/start-internet-idea/appstack/AppstackServer/conf/application.conf,/home/sarath/start-internet-idea/appstack/AppstackServer/target/scala-2.11/classes/application.conf)[0m
-[0m[[0mdebug[0m] [0m	(/home/sarath/start-internet-idea/appstack/AppstackServer/conf/openshift.conf,/home/sarath/start-internet-idea/appstack/AppstackServer/target/scala-2.11/classes/openshift.conf)[0m

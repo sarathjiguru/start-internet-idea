@@ -14,6 +14,8 @@ import play.data.validation.Constraints.RequiredValidator;
 import play.i18n.Lang;
 import play.libs.F;
 import play.libs.F.*;
+import play.twirl.api.Html;
+import views.html.index;
 
 import static play.test.Helpers.*;
 import static org.fest.assertions.Assertions.*;
@@ -35,7 +37,7 @@ public class ApplicationTest {
 
     @Test
     public void renderTemplate() {
-        Content html = views.html.index.render("Your new application is ready.");
+        Html html = index.render("Your new application is ready.");
         assertThat(contentType(html)).isEqualTo("text/html");
         assertThat(contentAsString(html)).contains("Your new application is ready.");
     }

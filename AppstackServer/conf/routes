@@ -2,10 +2,27 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
+#OPTIONS
+OPTIONS  /*all          controllers.CSRF.preFlight(all: String)
+
 # Home page
-GET     /                           controllers.Application.index
+GET        /                        controllers.Application.index
+POST       /installedApps/:data      controllers.Application.home(data: String)
+
+# Persist Operation
+GET /persist controllers.UserController.persist()
+
+# Find Operation
+GET /find controllers.UserController.find()
+
+# Update Operation
+GET /update controllers.UserController.edit()
+
+# Delete Operation
+GET /delete controllers.UserController.erase()
+
 
 # Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file               controllers.Assets.at(path="/public", file)
+GET        /assets/*file        controllers.Assets.at(path="/public", file)
 
     
