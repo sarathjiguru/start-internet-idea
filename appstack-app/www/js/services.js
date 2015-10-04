@@ -1,7 +1,7 @@
 angular.module('starter.services', [])
 
     .factory('Chats', function ($q) {
-        // Might use a resource here that returns a JSON array
+        // Might use a resousrce here that returns a JSON array
         var chats = []
         // Some fake testing data
         return {
