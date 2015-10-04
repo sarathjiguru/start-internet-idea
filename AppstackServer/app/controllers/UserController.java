@@ -18,12 +18,10 @@ public class UserController extends Controller {
 
     public static Result persist() {
         ArrayList<String> getvalues = new ArrayList<>();
-
         getvalues.add("00011");
         getvalues.add("sarath");
         getvalues.add("C Bhargav");
         getvalues.add("Hill Colony");
-
         String[] values = new String[getvalues.size()];
         getvalues.toArray(values);
 
@@ -41,7 +39,6 @@ public class UserController extends Controller {
         ResultSet updatedRow = CassandraSession.execute(update(KEY_SPACE, TABLE)
                 .with(set("city", "Nagarjuna Sagar"))
                 .where(eq("userId", "00011")));
-
         return ok("Record updated:" + printUser(updatedRow));
     }
 
