@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <style>
+      .angular-google-map-container {
+          width: 100%;
+          height: 504px;
+      }
+    </style>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <link href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+
+    <script>
+// Ionic Starter App
+
+// angular.module is a global place for creating, registering and retrieving Angular modules
+// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
+// the 2nd parameter is an array of 'requires'
+// 'starter.services' is found in services.js
+// 'starter.controllers' is found in controllers.js
+angular.module('app', ['ionic'])
+
+.run(function($ionicPlatform) {
+  $ionicPlatform.ready(function() {
+    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+    // for form inputs)
+    if(window.cordova && window.cordova.plugins.Keyboard) {
+      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+    }
+    if(window.StatusBar) {
+      // org.apache.cordova.statusbar required
+      StatusBar.styleDefault();
+    }
+  });
+})
+
+.config(function($stateProvider, $urlRouterProvider) {
+
+  // Ionic uses AngularUI Router which uses the concept of states
+  // Learn more here: https://github.com/angular-ui/ui-router
+  // Set up the various states which the app can be in.
+  // Each state's controller can be found in controllers.js
+  $stateProvider
+    
+    .state('page2', {
+      url: '/tabs',
+      templateUrl: 'page2.html'
+    })
+    
+    .state('page5', {
+      url: '/history',
+      templateUrl: 'page5.html'
+    })
+    
+    .state('page6', {
+      url: '/profile',
+      templateUrl: 'page6.html'
+    })
+    
+    .state('page7', {
+      url: '/signup',
+      templateUrl: 'page7.html'
+    })
+    
+    .state('page8', {
+      url: '/booked',
+      templateUrl: 'page8.html'
+    })
+    ;
+
+  // if none of the above states are matched, use this as the fallback
+  
+  $urlRouterProvider.otherwise('/tabs');
+  
+
+});
+
+
+    </script>
+  </head>
+  <body ng-app="app" animation="slide-left-right-ios7">
+  <div>
+    <div>
+        <ion-nav-bar class="bar-stable">
+            <ion-nav-back-button class="button-icon icon ion-ios7-arrow-back">Back</ion-nav-back-button>
+        </ion-nav-bar>
+        <ion-nav-view></ion-nav-view>
+    </div>
+</div>
+<script id="page2.html" type="text/ng-template">
+<ion-view title="Paper &amp; Plastic">
+    <ion-tabs class="tabs-stable tabs-icon-top">
+        <ion-tab title="History" icon="ion-android-trash">
+            <ion-content padding="true" class="has-header">
+                <form>
+                    <ion-list></ion-list>
+                </form>
+                <div class="spacer" style="display: inline-block; width: 300px; height: 40px;"></div>
+                <div class="list card">
+                    <div class="item item-divider">On September 15 2015</div>
+                    <div class="item item-body"></div>
+                    <div class="item item-divider">Earned Rs. 100</div>
+                </div>
+                <div class="list card">
+                    <div class="item item-divider">On September 15 2015</div>
+                    <div class="item item-body"></div>
+                    <div class="item item-divider">Earned Rs. 100</div>
+                </div>
+                <div class="list card">
+                    <div class="item item-divider">On September 15 2015</div>
+                    <div class="item item-body"></div>
+                    <div class="item item-divider">Earned Rs. 100</div>
+                </div>
+            </ion-content>
+        </ion-tab>
+        <ion-tab title="Book" icon="ion-calendar">
+            <ion-content padding="true" class="has-header">
+                <div class="spacer" style="display: inline-block; width: 300px; height: 40px;"></div>
+                <form>
+                    <ion-radio>Radio</ion-radio>
+                </form>
+                <label class="item item-input" name="Book later">
+                    <span class="input-label">Date</span>
+                    <input type="date" placeholder="Today">
+                </label>
+                <label class="item item-input" name="Hour">
+                    <span class="input-label">Hour</span>
+                    <input type="number" placeholder="Hour">
+                </label>
+                <ion-checkbox>paper</ion-checkbox>
+                <ion-checkbox>plastic</ion-checkbox>
+                <ion-checkbox>glass</ion-checkbox>
+                <a href="#/booked" class="button button-balanced button-block ">Take my plastic!</a>
+            </ion-content>
+        </ion-tab>
+        <ion-tab title="Account" icon="ion-gear-a">
+            <ion-content padding="true" class="has-header">
+                <div class="spacer" style="display: inline-block; width: 300px; height: 40px;"></div>
+                <label class="item item-input">
+                    <span class="input-label">Username</span>
+                    <input type="text" placeholder="">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Password</span>
+                    <input type="password" placeholder="">
+                </label>
+                <div class="spacer" style="height: 40px;"></div>
+                <a href="#/profile" class="button button-positive button-block  icon-right ion-log-in">Log in</a>
+                <a href="#/signup" class="button button-dark button-clear button-block  icon-right ion-plus-round">Or create an account</a>
+            </ion-content>
+        </ion-tab>
+    </ion-tabs>
+    <div class="list card">
+        <div class="item item-divider">On September 15 2015</div>
+        <div class="item item-body"></div>
+        <div class="item item-divider">Earned Rs. 100</div>
+    </div>
+</ion-view></script>
+<script id="page5.html" type="text/ng-template">
+<ion-view title="History">
+    <ion-content padding="true" class="has-header">
+        <div class="spacer" style="display: inline-block; width: 300px; height: 40px;"></div>
+        <div class="list card">
+            <div class="item item-divider">On September 15 2015</div>
+            <div class="item item-body"></div>
+            <div class="item item-divider">Plastic Kgs: 15. Earned Rs. 100</div>
+        </div>
+        <div class="list card">
+            <div class="item item-divider">On August 25 2015</div>
+            <div class="item item-body"></div>
+            <div class="item item-divider">Plastic Kgs: 18. Earned Rs. 150</div>
+        </div>
+        <div class="list card">
+            <div class="item item-divider">On June 10</div>
+            <div class="item item-body"></div>
+            <div class="item item-divider">Plastic Kgs: 20. Earned Rs. 180</div>
+        </div>
+        <div class="list card">
+            <div class="item item-divider">On April 10 2015</div>
+            <div class="item item-body"></div>
+            <div class="item item-divider">Plastic Kgs: 12. Earned Rs. 100</div>
+        </div>
+    </ion-content>
+</ion-view></script>
+<script id="page6.html" type="text/ng-template">
+<ion-view title="Profile">
+    <ion-content padding="true" class="has-header">
+        <div class="spacer" style="display: inline-block; width: 300px; height: 40px;"></div>
+        <img src="/profile/static/profileurl.jpg" style="width: 100%; height: auto;">
+        <ion-list></ion-list>
+        <a href="#/tabs" class="button button-positive button-block button-large">Schedule Now!</a>
+        <div class="spacer" style="display: inline-block; width: 300px; height: 40px;"></div>
+        <div class="spacer" style="display: inline-block; width: 300px; height: 40px;"></div>
+        <button class="button button-stable button-block  icon-left ion-beaker">Recycled 58 kgs plastic!</button>
+        <button class="button button-stable button-block  icon-left ion-cash">Rs. 560 credited</button>
+        <button class="button button-stable button-block  icon-left ion-cash">Rs. 30 are with us!</button>
+    </ion-content>
+</ion-view></script>
+<script id="page7.html" type="text/ng-template">
+<ion-view title="Signup">
+    <ion-content padding="true" scroll="false" class="has-header">
+        <form>
+            <ion-list>
+                <label class="item item-input">
+                    <span class="input-label">Name</span>
+                    <input type="text" placeholder="">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Username</span>
+                    <input type="text" placeholder="">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Password</span>
+                    <input type="text" placeholder="">
+                </label>
+            </ion-list>
+            <a href="#/tabs" class="button button-stable button-block ">Sign up</a>
+        </form>
+    </ion-content>
+</ion-view></script>
+<script id="page8.html" type="text/ng-template">
+<ion-view title="Booking Info">
+    <ion-content padding="true" class="has-header">
+        <div>
+            <h2>Congrats!</h2>
+
+            <p>Your are now
+                <strong>environment friendly</strong>
+                <code>:)</code>
+            </p>
+        </div>
+        <ion-list>
+            <ion-item class="item-divider">Collector Info</ion-item>
+            <ion-item class="item-thumbnail-left">
+                <img src="/takers/profileurl.png">
+                <h2>Srinivas Santhanam</h2>
+                <p>Mobile: 9035116948</p>
+            </ion-item>
+            <label class="item item-input" name="Book later">
+                <span class="input-label">Date</span>
+                <input type="date" placeholder="Today">
+            </label>
+            <label class="item item-input" name="Hour">
+                <span class="input-label">Hour</span>
+                <input type="number" placeholder="Hour">
+            </label>
+        </ion-list>
+        <div class="spacer" style="display: inline-block; width: 300px; height: 40px;"></div>
+        <ion-list>
+            <ion-item class="item-divider">Paper</ion-item>
+            <ion-item>kgs: 10 Rs: 65</ion-item>
+        </ion-list>
+        <div class="spacer" style="display: inline-block; width: 300px; height: 40px;"></div>
+        <div>
+            <p>Give us feedback on the collector.</p>
+        </div>
+    </ion-content>
+</ion-view></script>
+  </body>
+</html>
